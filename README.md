@@ -20,3 +20,5 @@ This repository contains multiple branches to demo different approaches
 |compiled_appveyor|compiled|module with appveyor|
 
 [![Build status](https://ci.appveyor.com/api/projects/status/4u7a3sup5hwfne73?svg=true)](https://ci.appveyor.com/project/lazywinadmin/psmodulesamplea)
+
+[![Build status](https://dev.azure.com/ParisPS-DevOps/demo-pssamplemodule/_apis/build/status/demo-pssamplemodule-CI)](https://dev.azure.com/ParisPS-DevOps/demo-pssamplemodule/_build/latest?definitionId=1)
