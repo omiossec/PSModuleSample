@@ -15,4 +15,4 @@ write-host "Hi, I am your build agent. I run on $($Env:Agent.OS)"
 
 Write-host "I am starting the jon nammed $($Env:Agent.JobName) just for you"
 
-
+write-host "This is a Build Task, but nothing is done"
