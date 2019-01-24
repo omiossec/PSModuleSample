@@ -41,8 +41,11 @@ Describe "$ModuleName Module - Testing Manifest File (.psd1)"{
 
         InModuleScope $ModuleName {
 
-            it "Return a datetime result" {
+            it "get-psmWorldClock Return a datetime" {
 
+                $TimeResult = get-psmWorldClock -timeZone CET
+
+                ($TimeResult.gettype()).Name | Should be "DateTime"
 
             }
 
