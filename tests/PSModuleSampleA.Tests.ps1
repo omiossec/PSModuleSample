@@ -19,10 +19,6 @@ Describe "$ModuleName Module - Testing Manifest File (.psd1)"{
             $ModuleInformation.RootModule | Should not BeNullOrEmpty
         }
 
-        It "Should contains a Version" {
-            $ModuleInformation.ModuleVersion | Should not BeNullOrEmpty
-        }
-
         It "Should contains Author" {
             $ModuleInformation.Author | Should not BeNullOrEmpty
         }
@@ -39,7 +35,7 @@ Describe "$ModuleName Module - Testing Manifest File (.psd1)"{
 
     Context "Testing Internal Functions from $ModuleName" {
 
-        InModuleScope $ModuleName {
+
 
             it "get-psmWorldClock Return a datetime" {
 
@@ -51,7 +47,7 @@ Describe "$ModuleName Module - Testing Manifest File (.psd1)"{
 
 
 
-        }
+
 
 
 
