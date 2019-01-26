@@ -4,7 +4,7 @@ param (
 )
 
 
-$ModuleManifestPath = "$($BuildModulePath)\build\$($ModuleName)$($ModuleName).psd1"
+$ModuleManifestPath = "$($BuildModulePath)\build\$($ModuleName)\$($ModuleName).psd1"
 
 
 Get-Module -Name $ModuleName | remove-module
