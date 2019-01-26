@@ -19,6 +19,10 @@ write-host "Hi, I am your build agent. I will build the module $($ModuleName)"
 
 write-host "More info of this task can be found here $($Env:Build_BuildUri)"
 
+if ($modulename.Length -lt 1) {
+
+    Exit-PSHostProcess
+}
 
 $BuildFolder = join-path -path $SourceFolder  -childpath "Build"
 
