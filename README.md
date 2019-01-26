@@ -1,6 +1,6 @@
 # PSModuleSample
 
-PowerShell Module demo
+PowerShell Module demo psm1_azdevops version
 
 ## Branches
 
@@ -19,4 +19,4 @@ This repository contains multiple branches to demo different approaches
 |dotsource_appvey_buildps1||dotsourced|module with appveyor|
 |compiled_appveyor|compiled|module with appveyor|
 
-[![Build status](https://ci.appveyor.com/api/projects/status/4u7a3sup5hwfne73?svg=true)](https://ci.appveyor.com/project/lazywinadmin/psmodulesamplea)
+

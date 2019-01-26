@@ -1,12 +1,56 @@
-$projectRoot = Resolve-Path -Path "$PSScriptRoot\.."
-$moduleRoot = Split-Path -Path (Resolve-Path -Path "$projectRoot\*\*.psm1")
-$ModuleManifestPath = Resolve-Path -Path "$projectRoot\*\*.psd1"
-$moduleName = Split-Path -Path $moduleRoot -Leaf
+param (
+    $BuildModulePath=$Env:BUILD_SOURCESDIRECTORY,
+    $ModuleName = $ENV:ModuleName
+)
 
-Describe "Module $ModuleName Manifest Tests" {
-    It 'Passes Test-ModuleManifest' {
-        Test-ModuleManifest -Path $ModuleManifestPath | Should Not BeNullOrEmpty
-        $? | Should Be $true
+
+$ModuleManifestPath = "$($BuildModulePath)\build\$($ModuleName)\$($ModuleName).psd1"
+
+
+Get-Module -Name $ModuleName | remove-module
+
+$ModuleInformation = Import-module -Name $ModuleManifestPath -PassThru
+
+Describe "$($ModuleName) Module - Testing"{
+
+    Context "$ModuleName Module Configuration" {
+
+        It "Should contains RootModule" {
+            $ModuleInformation.RootModule | Should not BeNullOrEmpty
+        }
+
+        It "Should contains Author" {
+            $ModuleInformation.Author | Should not BeNullOrEmpty
+        }
+
+        It "Should contains Company Name" {
+             $ModuleInformation.CompanyName|Should not BeNullOrEmpty
+            }
+
+        It "Should contains Description" {
+            $ModuleInformation.Description | Should not BeNullOrEmpty
+        }
+
     }
-}
 
+    Context "Testing Internal Functions from $($ModuleName)" {
+
+
+
+            it "get-psmWorldClock Return a datetime" {
+
+                $TimeResult = get-psmWorldClock -timeZone CET
+
+                ($TimeResult.gettype()).Name | Should be "DateTime"
+
+            }
+
+
+
+
+
+
+
+    }
+
+}
