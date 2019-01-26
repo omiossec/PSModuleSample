@@ -27,7 +27,7 @@ $BuildModulePath =  join-path -path $BuildFolder -ChildPath $ModuleName
 
 $SourceFolder = join-path -path $SourceFolder  -childpath "$($ModuleName)"
 
-write-host "Build path $($BuildFolder)"
+write-host "Build path $($BuildFolder) and module path $($BuildModulePath)"
 
 write-host "Source Folder $($SourceFolder)"
 
