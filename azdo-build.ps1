@@ -11,8 +11,16 @@ param (
 
 write-host "Where are we ? : Here $($SourceFolder)"
 
-write-host "Hi, I am your build agent. I run on $($Env:Agent.OS)"
+write-host "The reason for starting this building $($Env:Build_Reason)"
 
-Write-host "I am starting the jon nammed $($Env:Agent.JobName) just for you"
+write-host "Commit message is $($Env:Build_SourceVersionMessage)"
 
-write-host "This is a Build Task, but nothing is done"
+write-host "Hi, I am your build agent. I will build the module $($ModuleName)"
+
+write-host "More info of this task can be found here $($Env:Build_BuildUri)"
+
+write-host "Creating build folder in $($SourceFolder)\build\$($ModuleName)"
+
+$BuildFolder = join-path -path $SourceFolder  -childpath "\Build\$($ModuleName)"
+
+write-host "Build path $($BuildFolder)"
