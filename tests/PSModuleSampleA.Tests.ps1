@@ -3,9 +3,9 @@ param (
     $ModuleName = $ENV:ModuleName
 )
 
-$BuildFolder = $BuildModulePath + "\build\$($ModuleName)"
-$ModuleManifestName = "$($ModuleName).psd1"
-$ModuleManifestPath = "$($BuildFolder)\$ModuleManifestName"
+
+$ModuleManifestPath = "$($BuildModulePath)\build\$($ModuleName)$($ModuleName).psd1"
+
 
 Get-Module -Name $ModuleName | remove-module
 
