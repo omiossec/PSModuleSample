@@ -70,3 +70,8 @@ if ($AllFunctions) {
 
 write-host "Updating Module Manifest with $($PublicFunctionsList.BaseName)"
 Update-ModuleManifest -Path $BuildModuleManifest -FunctionsToExport $PublicFunctionsList.BaseName
+
+
+write-host "Update Pester"
+
+Update-Module -Name Pester -Force
