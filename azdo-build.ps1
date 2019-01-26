@@ -35,9 +35,10 @@ new-item -Path $BuildFolder -ItemType Directory
 # Creating Modle path
 $BuildModuleFile = Join-Path -Path $BuildFolder -ChildPath "$($ModuleName).psm1"
 $BuildModuleManifest = Join-Path -Path $BuildFolder -ChildPath "$($ModuleName).psd1"
+$SourceMouduleManifest = Join-Path -Path $SourceFolder -ChildPath "$($ModuleName).psd1"
 
 
-Copy-Item -Path (Join-Path -Path $SourceFolder -ChildPath "$($ModuleName)\$($ModuleName).psd1") -Destination $BuildModuleManifest -Force
+Copy-Item -Path $SourceMouduleManifest -Destination $BuildModuleManifest -Force
 
 
 
